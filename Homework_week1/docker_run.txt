@@ -1,0 +1,23 @@
+docker run from built-in image:
+docker run -it \
+  --network=week_1_default \
+  green_taxi_ingest:v01 \
+    --user=root \
+    --password=root \
+    --host=postgres_db \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=green_taxi_data_2019 \
+    --url="http://172.25.240.1:8000/green_tripdata_2019-09.csv"
+
+
+docker run -it \
+  --network=week_1_default \
+  grn_zone_taxi_ingest:v01 \
+    --user=root \
+    --password=root \
+    --host=postgres_db \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=zone_green_taxi_2019 \
+    --url="http://172.25.240.1:8000/taxi_zone_lookup.csv"
